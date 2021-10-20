@@ -138,3 +138,4 @@
 <?php 
 include'../../assets/paticka.php';
 ?>
+Mirko Pelko
