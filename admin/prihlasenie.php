@@ -90,5 +90,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 </section>
 
 <?php 
-	include'/assets/paticka.php';
+	include'assets/paticka.php';
 ?>
