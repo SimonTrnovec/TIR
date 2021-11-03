@@ -1,34 +1,48 @@
 <?php 
 	include'assets/hlavicka.php';
 	include'assets/menu.php';
-	
 ?>
-<?php
-session_start();
+	<?php
+$servername = "localhost";
+$username = "simon22";
+$password = "1QYicDQ0pPENWmzI";
+$dbname = "demo21";
 
-if (!isset($_SESSION['user']))
-{
-    $_SESSION['user'] = ['username' => null, 'isLoggedIn' => false, ];
-
-}
-?>
-<div class="container">
-
-
-<?php
-$uzivatelia = file('uzivatelia.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-foreach ($uzivatelia as $uzivatel)
-{
-    list($meno, $heslo) = explode('::', $uzivatel);
-    $prihlasenie[$meno] = $heslo;
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
-$chyba = "";
+
+//<?php
+//session_start();
+
+//if (!isset($_SESSION['user']))
+//{
+  //  $_SESSION['user'] = ['username' => null, 'isLoggedIn' => false, ];
+
+//}
+//
+//<div class="container">
+
+
+//<?php
+//$uzivatelia = file('uzivatelia.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+//foreach ($uzivatelia as $uzivatel)
+//{
+  //  list($meno, $heslo) = explode('::', $uzivatel);
+    //$prihlasenie[$meno] = $heslo;
+//}
+
+//$chyba = "";
+
+
+
+
 ?>
-
-
-
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
