@@ -47,24 +47,37 @@ if ($conn->connect_error) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
+    $user = $_POST['meno'];
+    $heslo = $_POST['heslo'];
+    $sql = 'SELECT * FROM uzivatelia WHERE login = "'.$user'" AND heslo = "'.$heslo'" ';
+    $result = $conn->query($sql);
 
-    foreach ($prihlasenie as $name => $password)
-    {
-        if ($name === $_POST['meno'])
-        {
-            if ($password === $_POST['heslo'])
-            { 
-                $_SESSION['user'] = ['username' => $meno, 'isLoggedIn' => true, ];
-                header('Location: ./index.php');
-
-            }
+    if ($result->num_rows > 0){
+        while ($row = $result->fetch_assoc()){
+            echo "id: " . $row["id"]. " - Name: " . $row["login"]. " " . $row["heslo"]. "<br>";
         }
+        session_start();
+        $_SESSION["user"] = $user;
+        header('Location: index.php')
+
+    } 
+    //foreach ($prihlasenie as $name => $password)
+   // {
+     //   if ($name === $_POST['meno'])
+       // {
+         //   if ($password === $_POST['heslo'])
+           // { 
+             //   $_SESSION['user'] = ['username' => $meno, 'isLoggedIn' => true, ];
+               // header('Location: ./index.php');
+
+            //}
+        //}
        // var_dump($_SESSION);
           else
       echo $chyba = "nespravne meno alebo heslo!";
     }
 
-    }
+    
 
  ?>
 <!DOCTYPE html>
