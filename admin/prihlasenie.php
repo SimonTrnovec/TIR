@@ -49,16 +49,17 @@ if ($conn->connect_error) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     $meno = $_POST['meno'];
-    $heslo = $_POST['heslo'];
-    $sql = 'SELECT * FROM uzivatelia /*WHERE login = "'.$meno.'" AND heslo = "'.$heslo.'"*/ ';
+    $heslo = md5($_POST['heslo']);
+    $sql = 'SELECT * FROM uzivatelia WHERE login = "'.$meno.'" AND heslo = "'.$heslo.'" ';
+    // echo $sql;
     $result = $conn->query($sql);
-  
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()){
             echo "id: " . $row["id"]. " - Name: " . $row["login"]. " " . $row["heslo"]. "<br>";
         }
        
         $_SESSION["meno"] = $meno;
+        //$_SESSION["meno"] = $row["meno"];
         
         header('Location: index.php');
 

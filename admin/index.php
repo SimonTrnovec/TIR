@@ -9,18 +9,13 @@ session_start();
 
 if (!isset($_SESSION['meno']))
 {
-   unset($_SESSION['meno']);
+   //unset($_SESSION['meno']);
    header('Location: ./prihlasenie.php');
 }
-/*if ($_SESSION['meno']['isLoggedIn'] === false)
-{
-    header('Location: ./prihlasenie.php');
-}
-*/
 
 ?>
 <?php 
-if(isset($_POST['clear-session']))
+if(isset($_POST['prihlasenie']))
 { 
 session_destroy();
 }
@@ -30,5 +25,5 @@ session_destroy();
 echo $_SESSION[("meno")];
 ?></h1>
 <form action="index.php" method="POST">
-    <input type="submit" class="btn btn-primary" name="clear-session" value="Odhlasiť sa">
+    <input type="submit" class="btn btn-primary" name="prihlasenie" value="Odhlasiť sa">
 </form>
