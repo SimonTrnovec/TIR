@@ -1,4 +1,5 @@
 <?php 
+  session_start();
 	include'assets/hlavicka.php';
 	include'assets/menu.php';
 ?>
@@ -47,20 +48,20 @@ if ($conn->connect_error) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-    $user = $_POST['meno'];
+    $meno = $_POST['meno'];
     $heslo = $_POST['heslo'];
-    $sql = 'SELECT * FROM uzivatelia WHERE login = "'.$user'" AND heslo = "'.$heslo'" ';
+    $sql = 'SELECT * FROM uzivatelia /*WHERE login = "'.$meno.'" AND heslo = "'.$heslo.'"*/ ';
     $result = $conn->query($sql);
-
-    if ($result->num_rows > 0){
+  
+    if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()){
             echo "id: " . $row["id"]. " - Name: " . $row["login"]. " " . $row["heslo"]. "<br>";
         }
-        session_start();
-        $_SESSION["user"] = $user;
-        header('Location: index.php')
+       
+        $_SESSION["meno"] = $meno;
+        
+        header('Location: index.php');
 
-    } 
     //foreach ($prihlasenie as $name => $password)
    // {
      //   if ($name === $_POST['meno'])
@@ -73,12 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             //}
         //}
        // var_dump($_SESSION);
-          else
-      echo $chyba = "nespravne meno alebo heslo!";
-    }
+     
 
-    
-
+  }
+  $conn->close();
+  }
+  
  ?>
 <!DOCTYPE html>
 <html lang="en">
