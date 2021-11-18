@@ -15,7 +15,7 @@ if (!isset($_SESSION['meno']))
 
 ?>
 <?php 
-if(isset($_POST['prihlasenie']))
+if(isset($_POST['odhlasenie']))
 { 
 session_destroy();
 }
@@ -25,5 +25,5 @@ session_destroy();
 echo $_SESSION[("meno")];
 ?></h1>
 <form action="index.php" method="POST">
-    <input type="submit" class="btn btn-primary" name="prihlasenie" value="Odhlasiť sa">
+    <input type="submit" class="btn btn-primary" name="odhlasenie" value="Odhlasiť sa">
 </form>

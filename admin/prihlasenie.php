@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         }
        
         $_SESSION["meno"] = $meno;
-        //$_SESSION["meno"] = $row["meno"];
+        //$_SESSION["user"] = $row["meno"];
         
         header('Location: index.php');
 

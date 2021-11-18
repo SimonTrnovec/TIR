@@ -10,21 +10,21 @@
                 <?php
                     //$active_page = basename($_SERVER['SCRIPT_NAME'],'.php');
                     $active_page = basename(dirname($_SERVER['SCRIPT_NAME']));
-                    //$menu = [];
-                   // $riadky = file('../../assets/menu.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                    $menu = [];
+                    $riadky = file('../public/assets/menu.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
                     
-                   /* foreach ($riadky as $riadok) {
+                    foreach ($riadky as $riadok) {
                         list($k,$h) = explode(':',$riadok);
                         $menu[$k] = $h;
-                    }*/
+                    }
 
-                    //foreach($menu as $odkaz => $hodnota){
-                   // echo '
-                      // <li class="nav-item">
-                      //     <a class="nav-link '.($active_page == $odkaz ?"active":"").'"
-                      //      href="../'.$odkaz.'">'.$hodnota.'</a>
-                      //  </li>';
-                  //  }
+                    foreach($menu as $odkaz => $hodnota){
+                    echo '
+                       <li class="nav-item">
+                           <a class="nav-link '.($active_page == $odkaz ?"active":"").'"
+                            href="../public/theme/'.$odkaz.'">'.$hodnota.'</a>
+                        </li>';
+                   }
                 ?>
 
                 </ul>
