@@ -16,33 +16,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-
-//<?php
-//session_start();
-
-//if (!isset($_SESSION['user']))
-//{
-  //  $_SESSION['user'] = ['username' => null, 'isLoggedIn' => false, ];
-
-//}
-//
-//<div class="container">
-
-
-//<?php
-//$uzivatelia = file('uzivatelia.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-//foreach ($uzivatelia as $uzivatel)
-//{
-  //  list($meno, $heslo) = explode('::', $uzivatel);
-    //$prihlasenie[$meno] = $heslo;
-//}
-
-//$chyba = "";
-
-
-
-
 ?>
 <?php
 
@@ -63,25 +36,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
         
         header('Location: index.php');
 
-    //foreach ($prihlasenie as $name => $password)
-   // {
-     //   if ($name === $_POST['meno'])
-       // {
-         //   if ($password === $_POST['heslo'])
-           // { 
-             //   $_SESSION['user'] = ['username' => $meno, 'isLoggedIn' => true, ];
-               // header('Location: ./index.php');
-
-            //}
-        //}
-       // var_dump($_SESSION);
-     
-
   }
   $conn->close();
   }
-  
+  if( !empty($chyba) ){
+    {
+
+        $alert = "alert-success";
+        $chyba = "Tvoj príspevok bol uložený";
+        $message = "Ďakujeme!";
+    }
+    ?>
+    <div class="alert <?php echo $alert ?> alert-dismissible fade show" role="alert">
+        <strong>Skvelé!</strong> <?php echo $chyba; ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+     </div>
+
  ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
