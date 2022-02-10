@@ -48,17 +48,22 @@ session_destroy();
           <hr>
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-              <a href="index.php" class="nav-link  text-white" aria-current="page">
+              <a href="index.php" class="nav-link text-white" aria-current="page">
                 Domov
               </a>
             </li>
             
-            <li class="pb-3">
+            <li class="nav-item">
               <a href="index.php?page=blog" class="nav-link text-white">
                 Blog
               </a>
             </li>
-            <li>
+            <li class="nav-item">
+              <a href="spravy.php?page=spravy" class="nav-link text-white">
+                Správy
+              </a>
+            </li>
+            <li class="pb-3">
             <form action="index.php" method="POST">
                 <input type="submit" class="btn btn-primary" name="clear-session" value="Odhlasiť sa">
             </form>
