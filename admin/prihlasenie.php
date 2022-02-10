@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     </style>
 </head>
 <body class="text-center">
-    <div class="justify-content-center">
+    <div class="justify-content-center py-200 container">
         <h2 class="h3">Prihlásenie</h2>
         <p>Prosím zadajte svoje prihlasovacie údaje.</p>
 
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
             </div>
             <div class="form-group">
                 <label>Heslo</label>
-                <input type="password" name="heslo" class="form-control pattern="[^ ][\D|0-9]{3,9}" required placeholder="Zadaj heslo" >
+                <input type="password" name="heslo" class="form-control" pattern="[^ ][\D|0-9]{3,9}" required placeholder="Zadaj heslo" >
                 <!--<input type="password" id="heslo" class="form-control" name="password" pattern="[^ ][\D|0-9]{3,9}" required placeholder="Zadaj heslo">-->
                 <span class="invalid-feedback">Nesprávne heslo!</span>
             </div>
