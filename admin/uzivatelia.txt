@@ -1,2 +1,0 @@
-admin::heslo0::Jurko Jánošík::admin
-janko::heslo2::Janko Hraško::user
