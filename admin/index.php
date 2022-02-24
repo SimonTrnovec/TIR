@@ -2,7 +2,7 @@
 	include'assets/hlavicka.php';
 	include'assets/menu.php';
     include'../includes/db.php';
-    include'assets/rozne.php'
+    include'assets/rozne.php';
 	
 ?>
 <?php
@@ -59,7 +59,7 @@ session_destroy();
               </a>
             </li>
             <li class="nav-item">
-              <a href="spravy.php?page=spravy" class="nav-link text-white">
+              <a href="spravy.php" class="nav-link text-white">
                 Správy
               </a>
             </li>
@@ -145,4 +145,3 @@ myModal.addEventListener('shown.bs.modal', function (event) {
 <?php 
 echo $_SESSION[("meno")];
 ?></h1>
-
