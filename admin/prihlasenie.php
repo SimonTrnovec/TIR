@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     </style>
 </head>
 <body class="text-center">
-    <div class="justify-content-center">
+    <div class="justify-content-center container p-5">
         <h2 class="h3">Prihlásenie</h2>
         <p>Prosím zadajte svoje prihlasovacie údaje.</p>
 

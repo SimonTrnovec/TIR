@@ -80,9 +80,9 @@ if (isset($_POST['clear-session'])) {
             <?php
             if (isset($_GET["spravy"])) {
             ?>
-                <div class="row pt-5 bg-light border shadow" style="">
-                    <button type='button' class='btn btn-outline-warning' data-bs-toggle='modal' data-bs-target='#new-modal'><i class="bi bi-file-earmark-plus-fill"></i> Nový článok</button>
-                    <table class="table table-striped" style=" margin-left: auto; margin-right: auto;">
+                <div class="row p-5 bg-light border shadow" style="">
+                    <button type='button' class='btn btn-outline-warning pb-2  ' data-bs-toggle='modal' data-bs-target='#new-modal'><i class="bi bi-file-earmark-plus-fill"></i> Nový článok</button>
+                    <table class="table table-striped table-primary" style=" margin-left: auto; margin-right: auto;">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -140,7 +140,7 @@ if (isset($_POST['clear-session'])) {
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Zavrieť</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Zavrieť</button>
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@ if (isset($_POST['clear-session'])) {
                                 </button>
                             </div>
                             <div class="modal-body">
-                                uprava
+                                <h2>Úprava</h2>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Zavrieť</button>
@@ -175,10 +175,10 @@ if (isset($_POST['clear-session'])) {
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Tu bude nová správa
+                                 <h1>Nová správa</h1>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Zavrieť</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Zavrieť</button>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@ if (isset($_POST['clear-session'])) {
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Zavrieť</button>
                                 <form action="prihlasenie.php?spravy=spravy" method="post">
-                                    <button type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal" name="zmazat" onclick="document.cookie='json_dat = ' + document.getElementById('lab').innerHTML;">Zmazať</button>
+                                    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" name="zmazat" onclick="document.cookie='json_dat = ' + document.getElementById('lab').innerHTML;">Zmazať</button>
                                 </form>
                                 </button>
                             </div>
