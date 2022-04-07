@@ -105,7 +105,7 @@ if (isset($_POST['clear-session'])) {
                                         </td>
                                         <td>
                                             <p style="font-weight: bold;"><?php echo $row['nadpis'] ?></p>
-                                            <img src="../public/theme/spravy/images/<?php echo $row['obrazok'] ?>" alt="" style="width: 150px; height: 100px; float: left;"><span class="col-5 d-inline-block text-truncate" style="max-width: 500px; padding-left: 30px;"><?php echo $row['obsah'] ?></span>
+                                            <img src="../public/theme/spravy/images/<?php echo $row['obrazok'] ?>" alt="" style="width: 150px; height: 100px; float: left;"><span class="col-2" style="max-width: 500px; padding: 15px;"><?php echo $row['obsah'] ?></span>
                                         </td>
                                         <td style='text-align: center; vertical-align: middle;'><button type='button' class='btn btn-outline-warning' data-bs-toggle='modal' data-bs-target='#view-modal' onclick="document.getElementById('lab').innerHTML=JSON.stringify({id: '<?php echo $row['id'] ?>', nadpis: '<?php echo $row['nadpis'] ?>', cas: '<?php echo $row['cas'] ?>', obsah: '<?php echo preg_replace('/\r|\n/', '', $row['obsah']); ?>', obrazok: '<?php echo $row['obrazok'] ?>'}); document.getElementById('nadpis-view').innerHTML=(JSON.parse(document.getElementById('lab').innerHTML)).nadpis; document.getElementById('cas-view').innerHTML=(JSON.parse(document.getElementById('lab').innerHTML)).cas; document.getElementById('obsah-view').innerHTML=(JSON.parse(document.getElementById('lab').innerHTML)).obsah; document.getElementById('image-view').src='../public/theme/spravy/images/' + (JSON.parse(document.getElementById('lab').innerHTML)).obrazok;"><i class='bi bi-file-text-fill'></i> Náhľad</button>
                                             <button type='button' class='btn btn-outline-info' data-bs-toggle='modal' data-bs-target='#edit-modal'><i class='bi bi-pencil-fill'></i> Úprava</button>
@@ -159,7 +159,7 @@ if (isset($_POST['clear-session'])) {
                                 <h2>Úprava</h2>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Zavrieť</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Zavrieť</button>
                             </div>
                         </div>
                     </div>
@@ -177,8 +177,8 @@ if (isset($_POST['clear-session'])) {
                             <div class="modal-body">
                                  <h1>Nová správa</h1>
                             </div>
-                            <input rows="2" class="container" cols="2" placeholder="Názov článku" ><br><br>
-                        <textarea rows="8" class="container" cols="50" placeholder="Článok" style="width: 450px; height: 200px; float: center;"></textarea>
+                            <input rows="2" class="form-control" cols="2" placeholder="Názov článku" ><br><br>
+                        <textarea rows="8" class="container form-control" cols="50" placeholder="Článok" style="width: 450px; height: 200px; float: center;"></textarea>
                     
                     Nahraj obrázok zo súboru:
                         <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload">
@@ -211,7 +211,7 @@ if (isset($_POST['clear-session'])) {
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Zavrieť</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Zavrieť</button>
                                 <form action="prihlasenie.php?spravy=spravy" method="post">
                                     <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" name="zmazat" onclick="document.cookie='json_dat = ' + document.getElementById('lab').innerHTML;">Zmazať</button>
                                 </form>
